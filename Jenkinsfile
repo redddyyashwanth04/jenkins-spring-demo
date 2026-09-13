@@ -12,10 +12,11 @@ pipeline {
             }
         }
         stage('Compile') {
-            steps {
-                sh './mvnw -B -DskipTests compile'
-            }
-        }
+                    steps {
+                        sh 'chmod +x mvnw'
+                        sh './mvnw -B -DskipTests compile'
+                    }
+                }
         stage('Tests') {
             steps {
                 sh './mvnw -B test'
