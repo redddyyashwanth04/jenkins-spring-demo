@@ -11,6 +11,6 @@ public class CalculatorServiceTest {
     @Test
     public void testAdd() {
         // Intentional failure to trigger the Jenkins CI/CD quality gate
-        assertEquals(50, service.add(2, 3));
+        assertEquals(5, service.add(2, 3));
     }
 }
