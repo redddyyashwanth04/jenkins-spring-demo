@@ -34,13 +34,13 @@ pipeline {
             }
         }
         stage('Deploy') {
-            when {
-                branch 'main'
-            }
-            steps {
-                echo 'Deploying Spring Boot JAR...'
-            }
-        }
+                    when {
+                        branch 'main'
+                    }
+                    steps {
+                        sh 'nohup java -jar target/JenkinsDemo-0.0.1-SNAPSHOT.jar > app.log 2>&1 &'
+                    }
+                }
         stage('Smoke Test') {
             when {
                 branch 'main'
